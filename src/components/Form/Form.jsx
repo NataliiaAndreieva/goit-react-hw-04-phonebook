@@ -24,7 +24,6 @@ import { Container, Button } from "./Form.styled";
 
   const handleSubmit = e => {
     e.preventDefault();
-    const { addNewContact } = this.props;
     addNewContact({ name, number });
     setName('');
     setNumber('');
