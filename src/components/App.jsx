@@ -5,17 +5,18 @@ import Form from "./Form";
 import Filter from "./Filter";
 import ContactsList from "./ContactsList";
 import { Container } from "./App.styled";
+import { useLocalStorage } from 'hooks/useLocalStorage';
 
-const useLocalStorage = (key, defaultValue) => {
-  const [state, setState] = useState(() => {
-    return JSON.parse(window.localStorage.getItem(key)) ?? defaultValue;
-  });
+// const useLocalStorage = (key, defaultValue) => {
+//   const [state, setState] = useState(() => {
+//     return JSON.parse(window.localStorage.getItem(key)) ?? defaultValue;
+//   });
 
-  useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(state));
-  }, [state, key]);
-  return [state, setState];
-};
+//   useEffect(() => {
+//     window.localStorage.setItem(key, JSON.stringify(state));
+//   }, [state, key]);
+//   return [state, setState];
+// };
 
 export function App () {
   const [contacts, setContacts] = useLocalStorage('contacts', [
